@@ -1,7 +1,7 @@
 # Hello World!
 class HelloTrema < Trema::Controller
   def start(_args)
-    logger.info 'Hi! from ' + self.class.name
+    logger.info self.class.name + ' started.'
   end
 
   def switch_ready(datapath_id)
@@ -9,6 +9,6 @@ class HelloTrema < Trema::Controller
   end
 
   def switch_disconnected(dpid)
-    logger.info 'Stop ' + dpid.to_hex + '!'
+    logger.info 'Bye ' + dpid.to_hex
   end
 end
